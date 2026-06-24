@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开云 · 轻读专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fcf9f4;
+      font-family: 'Georgia', 'Times New Roman', 'Songti SC', serif;
+      color: #2b2b2b;
+      line-height: 1.75;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fffcf9;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+      border-radius: 24px;
+      padding: 2.8rem 2.2rem;
+    }
+
+    /* hero 横幅 */
+    .hero {
+      border-bottom: 1px solid #e3ddd1;
+      padding-bottom: 2rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #1e1a15;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #786e5e;
+      font-style: italic;
+      margin-top: 0.2rem;
+      border-left: 3px solid #d3c9b8;
+      padding-left: 1rem;
+    }
+
+    /* 背景说明卡片 */
+    .bg-card {
+      background: #f3efe8;
+      padding: 1.6rem 2rem;
+      border-radius: 16px;
+      margin-bottom: 2.8rem;
+      box-shadow: inset 0 0 0 1px #e8e1d6;
+    }
+
+    .bg-card p {
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+
+    .bg-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 三段自然介绍 */
+    .article-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .article-block {
+      border-bottom: 1px dashed #ddd8ce;
+      padding-bottom: 1.8rem;
+    }
+
+    .article-block:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .article-block h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #3f392f;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .article-block h2 .num {
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+      color: #b1a694;
+      font-weight: 400;
+    }
+
+    .article-block p {
+      font-size: 1rem;
+      color: #3d3a34;
+      margin-bottom: 0.6rem;
+    }
+
+    .article-block .inset-quote {
+      background: #f7f3ec;
+      border-left: 4px solid #c6b9a4;
+      padding: 0.8rem 1.2rem;
+      margin: 1rem 0 0.6rem 0;
+      font-style: normal;
+      color: #595044;
+      font-size: 0.95rem;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .article-block .inset-quote strong {
+      color: #2f2a22;
+    }
+
+    /* FAQ 摘要风格块 */
+    .faq-mini {
+      background: #f5f0e8;
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      margin: 2.6rem 0 2rem;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #2b251e;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    .faq-mini .qa-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-mini .qa-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-mini .q {
+      font-weight: 500;
+      color: #4d453b;
+    }
+
+    .faq-mini .a {
+      padding-left: 0.8rem;
+      color: #5b5349;
+      border-left: 2px solid #d6ccbd;
+      margin-top: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-mini .a a {
+      color: #7a6d59;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    .faq-mini .a a:hover {
+      color: #3b3329;
+    }
+
+    /* 页尾访问提示 */
+    .footer-tip {
+      border-top: 1px solid #e3ddd1;
+      padding-top: 2rem;
+      margin-top: 1.2rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #4d463b;
+    }
+
+    .footer-tip p {
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-tip .link-sentence {
+      background: #f3efe8;
+      display: inline-block;
+      padding: 0.4rem 1.6rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      margin-top: 0.6rem;
+      border: 1px solid #dcd3c5;
+    }
+
+    .footer-tip .link-sentence a {
+      color: #4c4235;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #b3a692;
+      padding-bottom: 1px;
+    }
+
+    .footer-tip .link-sentence a:hover {
+      border-bottom-color: #1e1a15;
+    }
+
+    .footnote {
+      margin-top: 1.6rem;
+      font-size: 0.85rem;
+      color: #948c7e;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .article-block h2 {
+        font-size: 1.2rem;
+      }
+      .bg-card {
+        padding: 1.2rem 1.2rem;
+      }
+      .faq-mini {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- hero 横幅 -->
+  <div class="hero">
+    <h1>开云 · 轻读</h1>
+    <div class="sub">一个更快理解「开云」的杂志式速写</div>
+  </div>
+
+  <!-- 背景说明 -->
+  <div class="bg-card">
+    <p>你或许在搜索框里输入过「开云」这个词。它指向一个以信息聚合与内容引导为核心的站点。不少人在第一次访问时，会好奇：这个网站究竟提供什么？它的用途是否适合自己？</p>
+    <p>区别于需要大量点击才能摸索的门户，<strong>开云</strong>在首页就尝试用简洁的结构回答这些疑问。下面的三段介绍，从三个最常被问起的角度切入，帮你快速建立印象。</p>
+  </div>
+
+  <!-- 三段自然介绍 -->
+  <div class="article-grid">
+    <div class="article-block">
+      <h2><span class="num">01</span> 它解决什么场景下的需求？</h2>
+      <p>日常浏览中，我们常遇到信息过载的困扰。打开一个网页，满屏的链接、弹窗与广告，反而让人忘了原本要找什么。<strong>开云</strong>的页面布局偏向克制——没有喧闹的浮动元素，内容层级清晰，适合需要快速定位方向、又不希望被视觉噪音干扰的使用场景。</p>
+      <div class="inset-quote">
+        <strong>一个常见的例子：</strong> 当你只想确认某个功能或分类是否对应自己的需求，开云的首页能在十秒内给出结构化的提示，而不需要反复跳转。
+      </div>
+    </div>
+
+    <div class="article-block">
+      <h2><span class="num">02</span> 谁可能会觉得它顺手？</h2>
+      <p>从使用习惯来看，喜欢「先看全貌，再决定下一步」的人更容易适应这种风格。无论是偶尔需要查阅某一类信息的普通用户，还是对网站整洁度有要求的内容消费者，都能在简明的框架里找到自己的节奏。</p>
+      <p>另外，如果你对「打开一个网站后发现它和预期完全不符」感到疲倦，那么先通过首页的文字与分区做一次快速判断，会节省不少时间。</p>
+    </div>
+
+    <div class="article-block">
+      <h2><span class="num">03</span> 如何通过首页感知内容倾向？</h2>
+      <p>网站的首页通常像是一本书的目录，而<strong>开云</strong>的目录语感偏生活化，不堆砌术语。它的段落长度适中，重点信息用自然的强调方式呈现，而不是靠加粗或闪烁来抓眼球。</p>
+      <p>这种表达倾向意味着，站方更希望用户通过阅读与理解来建立认知，而不是靠视觉刺激产生冲动点击。对希望保持理性浏览节奏的人来说，这算是一个可辨识的信号。</p>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <h3>来自常见提问的摘要</h3>
+    <div class="qa-item">
+      <div class="q">▸ 这个站点适合快速判断是否值得深入吗？</div>
+      <div class="a">是的。首页的模块划分与文字说明，已经概括了核心用途。你可以先花一两分钟浏览段落，再决定是否继续探索。</div>
+    </div>
+    <div class="qa-item">
+      <div class="q">▸ 有没有办法直接看一眼就确认「开云」的定位？</div>
+      <div class="a">建议先阅读背景说明与三段介绍，它们从不同侧面勾勒了边界。若还想进一步了解，可以访问 <a href="https://site-official-ky.com">开云</a> 的页面，那里有更完整的呈现。</div>
+    </div>
+    <div class="qa-item">
+      <div class="q">▸ 内容更新频率如何？</div>
+      <div class="a">这个信息建议以站点实际动态为准。首页的结构相对稳定，但具体条目会随运营节奏调整。</div>
+    </div>
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="footer-tip">
+    <p>这份杂志式的速写，是为了让你在最短时间内判断：<br>「开云」是否匹配你当下的信息需求。</p>
+    <div class="link-sentence">
+      若要直接浏览完整内容，可以进入 <a href="https://site-official-ky.com">开云</a> 的页面，那里保留了更详细的分类与说明。
+    </div>
+  </div>
+
+  <div class="footnote">
+    —— 专为快速认知设计的轻专题 · 改版于近期 ——
+  </div>
+</div>
+</body>
+</html>
